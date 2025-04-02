@@ -6,13 +6,15 @@ ranger_transX(ranger_base) { joint: transX, limits: [-5 5], ctrl_H: 2., motorLam
 ranger_transY(ranger_transX) { joint: transY, limits: [-5 5], ctrl_H: 2., motorLambda:.02, motorMass:40 }
 #ranger_rot(ranger_trans) { joint: hingeZ, limits: [-5 5] }
 #ranger_rot(ranger_trans) { joint: circleZ, limits: [-1.1 -1.1 1.1 1.1], ctrl_H: 2. }
-ranger_rot(ranger_transY) { }
+ranger_rot(ranger_transY) { joint: hingeZ, limits: [-5 5], ctrl_H: 2., motorLambda:.02, motorMass:40 }
 
 Prefix: ranger_
 Include: <ranger_clean.g>
 Prefix!
 
 ranger_coll(ranger_base_link) { Q:[0, 0, -.14], shape: ssBox, size: [.75, .5, .3, .05], color:[1.,1.,1.,.5], contact: 1 }
+livox_lidar_base(ranger_base_link): { X: [.28, 0., .438], shape: marker, color: [0., 0., 1., 1], size:[.1], visual: True }
+livox_lidar(livox_lidar_base): { color: [0., 1., 0., 1] }
 
 Edit ranger_fr_Link_0: { meshscale: .025, color:[.9] }
 Edit ranger_fl_Link_0: { meshscale: .025, color:[.9] }
