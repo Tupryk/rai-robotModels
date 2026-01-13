@@ -16,6 +16,9 @@ ranger_coll(ranger_base_link) { Q:[0, 0, -.14], shape: ssBox, size: [.75, .5, .3
 livox_lidar_base(ranger_base_link): { X: [.28, 0., .438], shape: marker, color: [0., 0., 1., 1], size:[.1], visual: True }
 livox_lidar(livox_lidar_base): { color: [0., 1., 0., 1] }
 
+
+ranger_base_camera(ranger_base_link): { Q: "t(-.28 0. .2) d(255 0 1 0) d(90 0 0 1)", shape: marker, color: [0., 0., 1., 1], size:[.1], visual: True }
+
 Edit ranger_fr_Link_0: { meshscale: .025, color:[.9] }
 Edit ranger_fl_Link_0: { meshscale: .025, color:[.9] }
 Edit ranger_br_Link_0: { meshscale: .025, color:[.9] }
